@@ -1,11 +1,42 @@
 require 'rails_helper'
 
 RSpec.describe Food, type: :model do
-  it 'is valid with a name and a description' do
+  #it 'is invalid in nill category' do
+  #  food = Food.new(
+  #    name: 'Nasi Uduk',
+  #    description: 'Betawi style steamed rice cooked in coconut milk. Delicious!',
+  #    price: 15000.0
+  #  )
+
+  #  food.valid?
+
+  #  expect(food.errors[:category_id]).to include("id cannot be null")
+  #end
+
+  #it 'is invalid in does not exist category' do
+  #  food = Food.new(
+  #    name: 'Nasi Uduk',
+  #    description: 'Betawi style steamed rice cooked in coconut milk. Delicious!',
+  #    price: 15000.0, 
+  #    category_id: "1"
+  #  )
+
+  #  food.valid?
+
+  #  expect(food.errors[:category_id]).to include("does not exist")
+  #end
+  
+  it 'is valid with a name, a description and a category' do
+    #Category.create(
+    #  id: 1,
+    #  name: 'main course'
+    #)
+
     food = Food.new(
       name: 'Nasi Uduk',
       description: 'Betawi style steamed rice cooked in coconut milk. Delicious!',
-      price: 15000.0
+      price: 15000.0 
+      #category_id: '1'
     )
 
     expect(food).to be_valid
