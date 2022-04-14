@@ -1,5 +1,5 @@
 class Food < ApplicationRecord
-  has_many :category
+  belongs_to :category
   
   validates :name, presence: true, uniqueness: true
 

@@ -1,3 +1,4 @@
 class Category < ApplicationRecord
-  belongs_to :food
+  has_many :food
+  validates :name, presence: true, uniqueness: true, length: { minimum: 4 }
 end
